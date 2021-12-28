@@ -1,0 +1,79 @@
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card text-center">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <h3>
+            Agregar Tarea
+            <div
+              *ngIf="loading"
+              class="spinner-border float-right"
+              style="width: 3rem; height: 3rem"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </h3>
+          <span
+            *ngIf="submitted && createTarea.invalid"
+            class="badge badge-danger"
+            >TODOS LOS CAMPOS SON OBLIGATORIOS</span
+          >
+          <form
+            class="mt-4"
+            [formGroup]="createTarea"
+            (ngSubmit)="agregarTarea()"
+          >
+            <div class="row">
+              <div class="col">
+                <input
+                  type="date"
+                  class="form-control form-control-lg"
+                  formControlName="fecha"
+                  placeholder="fecha"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="number"
+                  class="form-control form-control-lg"
+                  formControlName="horas"
+                  placeholder="Horas"
+                />
+              </div>
+            </div>
+            <select
+              class="
+                custom-select
+                my-1
+                mr-sm-2
+                form-control form-control-lg
+                mt-3
+              "
+              id="inlineFormCustomSelectPref"
+              formControlName="tarea"
+            >
+              <option selected>Choose...</option>
+              <option value="tarea 1">Tarea 1</option>
+              <option value="tarea 2">Tarea 2</option>
+              <option value="tarea 3">Tarea 3</option>
+            </select>
+
+            <div class="mt-3">
+              <button
+                type="text"
+                class="btn btn-secondary btn-lg mr-3"
+                style="margin-right: 10px"
+                routerLink="/list-tareas"
+              >
+                Volver
+              </button>
+              <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

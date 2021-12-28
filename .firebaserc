@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angulardash-7c183": {
+      "hosting": {
+        "angulardash": [
+          "angulardash-7c183"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angulardash-7c183"
+  }
+}

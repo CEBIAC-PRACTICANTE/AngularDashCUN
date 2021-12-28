@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Lista de Tareas</span>
+      <button class="btn btn-dark float-right" routerLink="/create-tareas">
+        Agregar
+      </button>
+      <h5 style="margin-top: 30px" *ngIf="tareas.length == 0">
+        No hay tareas para mostrar
+      </h5>
+      <table *ngIf="tareas.length > 0" class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Tarea</th>
+            <th>Horas</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarea of tareas">
+            <td>{{ tarea.tareas }}</td>
+            <td>{{ tarea.horas }}</td>
+            <td>{{ tarea.fecha }}</td>
+            <td>
+              <i
+                (click)="eliminarTarea(tarea.id)"
+                class="fas fa-trash-alt fa-lg text-danger ml-2"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
